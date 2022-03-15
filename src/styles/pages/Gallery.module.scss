@@ -1,0 +1,36 @@
+@import '../variants.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: #{$spacing * 4};
+  padding: #{$spacing * 4} 0;
+  text-align: center;
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  span {
+    max-width: 540px;
+  }
+
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: #{$spacing * 5};
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @include breakpoint(md) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: #{$spacing * 10};
+      overflow: hidden;
+    }
+  }
+}

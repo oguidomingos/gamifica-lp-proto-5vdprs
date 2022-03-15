@@ -1,0 +1,88 @@
+@import '../variants.scss';
+
+.container {
+  height: calc(100vh - $headerHeight);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: #{$spacing * 4};
+  text-align: center;
+  position: relative;
+  padding-top: #{$spacing * 2};
+
+  @include breakpoint(md) {
+    padding-top: #{$spacing * 6};
+  }
+
+  img {
+    width: 100%;
+    max-height: #{$spacing * 25};
+    object-fit: contain;
+
+    @include breakpoint(md) {
+      max-height: #{$spacing * 40};
+    }
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  span {
+    font-size: 1.2rem;
+    max-width: #{$spacing * 50};
+    @include breakpoint(lg) {
+      max-width: #{$spacing * 80};
+    }
+  }
+
+  h1 {
+    font-size: 3.4rem;
+    @include breakpoint(md) {
+      font-size: 5rem;
+    }
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  &__actionBtns {
+    display: flex;
+    justify-content: center;
+    gap: #{$spacing * 10};
+    margin-top: $spacing;
+
+    @include breakpoint(md) {
+      gap: #{$spacing * 20};
+    }
+
+    > button {
+      @include breakpoint(md) {
+        padding: #{$spacing * 2};
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to bottom,
+      rgba($dark-bg, 0),
+      rgba($dark-bg, 1) 90%
+    );
+    width: 100%;
+    height: 6rem;
+
+    @include breakpoint(lg) {
+      height: 10rem;
+      bottom: 2rem;
+    }
+  }
+}

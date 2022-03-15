@@ -1,0 +1,79 @@
+@import '../variants.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: #{$spacing * 6};
+  padding: #{$spacing * 6} 0 #{$spacing * 4};
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  span {
+    max-width: 540px;
+  }
+
+  &__content {
+    display: flex;
+    height: 100%;
+    gap: #{$spacing * 10};
+    flex-direction: column;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      max-height: 100%;
+      padding: 0 #{$spacing * 10};
+    }
+
+    &__image {
+      display: flex;
+      justify-content: flex-start;
+      flex: 2;
+
+      @include breakpoint(md) {
+        max-height: 415px;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      gap: #{$spacing * 2};
+      align-self: center;
+      flex: 1;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: #{$spacing * 2};
+
+        h2,
+        p {
+          text-align: start;
+        }
+
+        h2 {
+          display: flex;
+          place-items: center;
+          gap: $spacing;
+
+          svg {
+            color: $secondary;
+          }
+        }
+
+        p {
+          max-width: #{$spacing * 30};
+        }
+      }
+    }
+  }
+}

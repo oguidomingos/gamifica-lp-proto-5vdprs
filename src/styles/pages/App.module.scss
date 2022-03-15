@@ -1,0 +1,5 @@
+@import '../variants.scss';
+
+.container {
+  padding: #{$spacing} #{$spacing * 6} 0;
+}

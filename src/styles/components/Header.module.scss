@@ -1,0 +1,121 @@
+@import '../variants.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0;
+  justify-content: space-between;
+
+  height: $headerHeight;
+  padding: $spacing #{$spacing * 6};
+
+  &__logo {
+    max-width: 7.5rem;
+    max-height: 5rem;
+    width: 100%;
+    height: 100%;
+
+    // Temporário
+    display: flex;
+    align-items: center;
+    color: $light-text;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+
+  &__toggleBtn {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    position: fixed;
+    right: 34px;
+    background: $light-bg;
+    color: $dark-bg;
+    border-radius: 50%;
+    padding: $spacing;
+
+    transition: 0.3s ease all;
+
+    z-index: 101;
+
+    &:hover {
+      background: $primary;
+      color: $light-bg;
+    }
+
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    height: 100vh;
+    z-index: 100;
+    transform: translateX(100%);
+
+    padding: #{$spacing * 10} $spacing;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    backdrop-filter: blur(8px);
+    background: rgba($light-bg, 0.8);
+    color: $dark-text;
+    transition: 0.2s ease transform;
+
+    &.openMenu {
+      transform: translateX(30%);
+    }
+
+    @include breakpoint(md) {
+      transform: none;
+      flex-direction: row;
+      align-items: center;
+      gap: #{$spacing * 10};
+      position: static;
+      width: auto;
+      height: 100%;
+      padding: 0;
+      background: $dark-bg;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing;
+      list-style: none;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        gap: #{$spacing * 5};
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          color: inherit;
+          text-transform: uppercase;
+          font-weight: 600;
+          transition: color 0.2s;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    button {
+      margin-top: #{$spacing * 6};
+      @include breakpoint(md) {
+        margin: 0;
+      }
+    }
+  }
+}

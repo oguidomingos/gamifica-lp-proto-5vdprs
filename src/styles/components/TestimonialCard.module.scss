@@ -1,0 +1,43 @@
+@import '../variants.scss';
+
+.container {
+  max-width: 454px;
+  background: $light-bg;
+  color: $dark-text;
+  border-radius: $borderRadius;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: #{$spacing * 4};
+  padding: #{$spacing * 4} #{$spacing * 8};
+
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    gap: #{$spacing * 2};
+    align-items: center;
+
+    &__name {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      gap: $spacing;
+      margin-top: $spacing;
+      text-align: left;
+
+      & strong:first-child {
+        font-size: 1.25rem;
+      }
+    }
+
+    img {
+      max-width: 80px;
+      max-height: 80px;
+      border-radius: 50%;
+    }
+  }
+
+  &__testimonial {
+    text-align: start;
+  }
+}

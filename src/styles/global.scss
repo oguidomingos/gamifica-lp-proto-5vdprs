@@ -1,0 +1,68 @@
+@import './variants.scss';
+
+:root {
+  --red: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  @media (max-width: 1080px) {
+    font-size: 93.75%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 87.5%;
+  }
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  font: 400 1rem 'Lato', sans-serif;
+  background: $dark-bg;
+  color: $light-text;
+  height: 100%;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #fafafa;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d1d1d1;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #d1d1d1;
+  }
+  ::-webkit-scrollbar-track {
+    background: #181818;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #181818;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #181818;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

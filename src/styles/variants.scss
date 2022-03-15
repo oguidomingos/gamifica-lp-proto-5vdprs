@@ -1,0 +1,30 @@
+//colors
+$primary: #03c3f2;
+$secondary: #02e4c0;
+$dark-text: #333333;
+$light-text: #fdfdfd;
+$dark-bg: #181818;
+$light-bg: #fafafa;
+
+//spacing
+$spacing: 0.5rem;
+
+//header height
+$headerHeight: 6.25rem;
+
+//misc
+$borderRadius: 0.25rem;
+
+//breakpoints
+@mixin breakpoint($point) {
+  @if $point == md {
+    @media (min-width: 48em /*768px*/) {
+      @content;
+    }
+  }
+  @if $point == lg {
+    @media (min-width: 85.5em /*1368px*/) {
+      @content;
+    }
+  }
+}
